@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Amul Kool Exotic Rose – Made with Love & Motion ✨</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Amul Kool Exotic Rose – a premium rose-flavoured milk drink made with the finest rose extracts. Exotic, refreshing, and smooth. Made with Love & Motion ✨"/>
+  <meta name="keywords" content="Amul Kool, Rose Milk, Exotic Rose, Flavoured Milk, Refreshing Drink, Premium Milk"/>
+  <meta name="author" content="Amul Kool"/>
+  <meta property="og:title" content="Amul Kool Exotic Rose – Made with Love & Motion ✨"/>
+  <meta property="og:description" content="A symphony of taste and aroma. Every sip is a journey through a blooming rose garden."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Amul Kool Exotic Rose"/>
+  <meta name="twitter:description" content="Exotic. Refreshing. Smooth. Amul Kool Rose Milk – Made with Love & Motion ✨"/>
+
+  <!-- Favicon (inline SVG heart) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#e84c6c",
+            secondary: "#d4af37",
+            "background-light": "#fff5f7",
+            "background-dark": "#1a1012",
+            "surface-light": "#ffffff",
+            "surface-dark": "#2a1b1f",
+            "text-light": "#2d1b22",
+            "text-dark": "#fcecee",
+          },
+          fontFamily: {
+            display: ["'Playfair Display'", "serif"],
+            body: ["'Poppins'", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            'lg': "1rem",
+            'xl': "1.5rem",
+            '2xl': "2rem",
+            'full': "9999px",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300 no-scroll">
+
+  <!-- ─── SCROLL PROGRESS BAR ─── -->
+  <div id="scroll-progress-bar" aria-label="Page scroll progress"></div>
+
+  <!-- ─── PRELOADER ─── -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content transition-all duration-500" id="preloader-content-box">
+      <div class="preloader-logo">Amul <span>Kool</span></div>
+      
+      <!-- Loading Step -->
+      <div id="preloader-loading-step">
+        <div class="loader-track">
+          <div id="loader-bar" class="loader-bar"></div>
+        </div>
+        <div class="loader-percentage"><span id="loader-percentage-text">0</span>%</div>
+        <p class="loader-text text-xs tracking-wider uppercase font-bold text-primary/70">Preparing the Exotic Rose experience... 🌸</p>
+      </div>
+
+      <!-- Preloader Sign In Step -->
+      <div id="preloader-signin-step" class="hidden mt-4 space-y-4 max-w-sm mx-auto">
+        <p class="text-xs text-text-muted mb-4 font-semibold">Please join the Kool Club to enter the Exotic Rose experience!</p>
+        <form id="preloader-signin-form" class="space-y-4">
+          <input type="text" id="preloader-username" placeholder="Enter your name..." required class="w-full px-4 py-3 rounded-full border border-rose-200 focus:outline-none focus:border-primary text-sm text-center font-semibold text-text-light bg-white/70"/>
+          <button type="submit" class="w-full py-3 bg-primary hover:bg-primary/95 text-white rounded-full font-semibold transition-all shadow-md shadow-primary/30 active:scale-95 text-sm">
+            Enter Experience 🌸
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FLOATING PARTICLES LAYER ─── -->
+  <div id="particles-layer" aria-hidden="true"></div>
+
+  <!-- ─── STICKY HEADER ─── -->
+  <header id="main-header" class="fixed w-full top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-rose-100 dark:border-rose-900/30 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center gap-2">
+          <span class="font-display italic text-3xl font-bold text-primary">Amul</span>
+          <span class="font-display font-black text-2xl tracking-wider text-secondary uppercase">Kool</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-2" id="main-nav">
+          <a class="nav-link" href="#experience" data-section="experience">The Experience</a>
+          <a class="nav-link" href="#benefits" data-section="benefits">Benefits</a>
+          <a class="nav-link" href="#stats" data-section="stats">Our Story</a>
+          <a class="nav-link" href="#gallery" data-section="gallery">Gallery</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <button id="btn-signin-nav" class="btn-hover-wiggle inline-flex items-center gap-1.5 bg-rose-50 dark:bg-rose-900/20 hover:bg-rose-100 hover:dark:bg-rose-900/40 text-primary px-5 py-2.5 rounded-full font-medium transition-all shadow-sm border border-rose-100/50 dark:border-rose-900/10 text-sm">
+            <span class="material-icons text-base">login</span>
+            <span id="signin-btn-text">Sign In</span>
+          </button>
+          <a class="hidden md:inline-flex btn-hover-wiggle bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-medium transition-colors shadow-lg shadow-primary/30" href="#buy" id="cta-buy-nav">
+            Buy Now 🛒
+          </a>
+          <button class="p-2 rounded-full bg-rose-50 dark:bg-rose-900/20 text-primary transition-colors" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="material-icons light-icon block dark:hidden">dark_mode</span>
+            <span class="material-icons dark-icon hidden dark:block">light_mode</span>
+          </button>
+          <!-- Mobile hamburger -->
+          <button class="md:hidden p-2 rounded-md text-text-light dark:text-text-dark" id="mobile-menu-btn" aria-label="Open menu">
+            <span class="material-icons">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-rose-100 dark:border-rose-900/30 px-4 pb-4">
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#experience">The Experience</a>
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#benefits">Benefits</a>
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#stats">Our Story</a>
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#gallery">Gallery</a>
+      <button id="btn-signin-mobile" class="block w-full mt-2 bg-rose-50 dark:bg-rose-900/20 text-primary py-2 rounded-full text-center font-medium text-sm">Sign In</button>
+      <a class="block mt-2 bg-primary text-white px-4 py-2 rounded-full text-center font-medium" href="#buy">Buy Now 🛒</a>
+    </div>
+  </header>
+
+  <!-- ─── HERO (SCROLL-CANVAS) ─── -->
+  <div id="hero-pin" class="relative w-full z-10" style="height: 250vh;">
+    <div class="sticky top-0 w-full h-screen overflow-hidden flex items-center bg-background-light dark:bg-background-dark transition-colors duration-300">
+
+      <!-- Canvas Background -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-br from-[#ffdbe2] to-[#f490a6] dark:from-[#35101a] dark:to-[#1a0c0f]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(212,175,55,0.15),transparent_60%)] pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(232,76,108,0.2),transparent_70%)] pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.3),transparent_50%)] pointer-events-none animate-pulse duration-[6000ms]"></div>
+        <canvas id="splash-canvas" class="w-full h-full block"></canvas>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-light via-transparent to-transparent dark:from-background-dark pointer-events-none transition-colors duration-300"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div id="hero-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center flex flex-col items-center justify-center transition-all duration-75">
+        <div class="hero-tagline-pill">Made with Love &amp; Motion ✨</div>
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-4 drop-shadow-md text-text-light dark:text-text-dark hero-title">
+          Amul Kool<br/>Rose Milk
+        </h1>
+        <p class="text-xl md:text-2xl font-body font-semibold tracking-wider text-primary dark:text-secondary uppercase hero-subtitle">
+          Sip the Exotic, Taste the Rose.
+        </p>
+        <a href="#experience" class="mt-10 btn-hover-wiggle inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-primary/30 transition-all" id="hero-cta">
+          Discover the Experience 🌸
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── EXPERIENCE SECTION ─── -->
+  <section class="py-24 bg-surface-light dark:bg-surface-dark transition-colors duration-300 relative z-20 overflow-hidden" id="experience">
+
+    <!-- Parallax floating roses -->
+    <div class="parallax-bg" data-speed="0.3" aria-hidden="true">
+      <span class="parallax-emoji" style="top:10%;left:5%;font-size:2.5rem;animation-delay:0s">🌹</span>
+      <span class="parallax-emoji" style="top:60%;left:90%;font-size:2rem;animation-delay:1.5s">🌸</span>
+      <span class="parallax-emoji" style="top:80%;left:20%;font-size:3rem;animation-delay:3s">🌷</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-reveal" data-animation="slide-up">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">The Exotic Rose Experience</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
+        <p class="text-lg text-text-light/80 dark:text-text-dark/80 max-w-2xl mx-auto">A symphony of taste and aroma, crafted for those who appreciate the finer things in life.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="relative group rounded-[2rem] overflow-hidden shadow-2xl scroll-reveal" data-animation="fade-left">
+          <div class="absolute inset-0 bg-primary/10 mix-blend-multiply dark:mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+          <img alt="Swirling pink milk splash with rose notes" class="w-full aspect-[4/3] object-cover transform group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-MKZl_vzdPfh1-8vmtRKzCrsj7P4mxTabq9uaSg4tA2cxzM1LuRpdHEbFkfCMDX0ukvfSVmxKbRHkR5jINg4rLyfY43TaASy-ojmOXyqsVDI-__tJP-MpKabaLbbgDS4Pauyd1KExuAN80m30On-s4Tds4nF0bPKZdTmC_i586AmyeAYaxjMOUeU5gFcwNaRhGD3-oKvyeuFwEBdeYBnO-CdVSYZYNCORTogpnYuRHC9tE1lN5Wa3wQgtlvPWhh8yCmtdRqWER4Tr"/>
+        </div>
+        <div class="scroll-reveal" data-animation="fade-right">
+          <h3 class="text-2xl md:text-3xl font-display font-bold mb-4 text-primary">Fragrant Rose Essence</h3>
+          <p class="text-text-light/80 dark:text-text-dark/80 mb-6 text-lg leading-relaxed">
+            We source the finest, most fragrant roses to extract the pure essence that gives our drink its signature aroma and flavor. Every sip is a journey through a blooming rose garden.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-secondary mt-1">check_circle</span>
+              <span class="text-lg">Premium Rose Extracts 🌹</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-secondary mt-1">check_circle</span>
+              <span class="text-lg">Delicate Floral Notes 🌸</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-secondary mt-1">check_circle</span>
+              <span class="text-lg">Soothing &amp; Refreshing 💫</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-24">
+        <div class="order-2 md:order-1 scroll-reveal" data-animation="slide-up">
+          <h3 class="text-2xl md:text-3xl font-display font-bold mb-4 text-secondary">The Gold Edition Quality</h3>
+          <p class="text-text-light/80 dark:text-text-dark/80 mb-6 text-lg leading-relaxed">
+            The Gold Edition signifies our commitment to unparalleled quality. Blending real milk goodness with our exotic rose flavor creates a rich, creamy texture that sets the standard.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-primary mt-1">verified</span>
+              <span class="text-lg">Rich, Creamy Milk Base 🥛</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-primary mt-1">verified</span>
+              <span class="text-lg">Perfectly Balanced Sweetness 🍯</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-primary mt-1">verified</span>
+              <span class="text-lg">No Artificial Colors 🌿</span>
+            </li>
+          </ul>
+        </div>
+        <div class="order-1 md:order-2 relative group rounded-[2rem] overflow-hidden shadow-2xl scroll-reveal" data-animation="bounce-in">
+          <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply dark:mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+          <img alt="Creamy pink milk splash" class="w-full aspect-[4/3] object-cover transform group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcxSMLIq97EtT8_majBeZGmDoSTw8ezjdLz-NLD2kMEK7IiRwSD2RqHRwmRxay34XZWNwC5X-6BV7EB8X9Ywsf4BOC_wpLLUWVnczMla5iJLV0L3WwkjAiwnasl6JoT3u0uY4JdmrEmAr9VNG8QKWPPPzWzifB8HS5NmHiGO_nXE-rDpqToZsZdDEJUf5JHF40BhqcHUxkxbbf8qRp7cV7qn8dJtmGnpfCER_57d0Scv8aYq6kYTM7KJIaNRM_bHp-uvZd6ounTB8S"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FLAVOR STORY & PRODUCT HIGHLIGHTS ─── -->
+  <section class="py-24 bg-surface-light dark:bg-surface-dark transition-colors duration-300 relative z-20 overflow-hidden" id="flavor-story">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        
+        <!-- Left: Flavor Story -->
+        <div class="scroll-reveal" data-animation="fade-left">
+          <div class="hero-tagline-pill inline-block mb-4 text-xs font-semibold px-4 py-1.5 rounded-full bg-rose-50 dark:bg-rose-900/30 text-primary">The Heritage</div>
+          <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 text-text-light dark:text-text-dark">A Royal Legacy Meet Modern Coolness</h2>
+          <div class="w-20 h-1 bg-primary mb-8 rounded-full"></div>
+          
+          <p class="text-text-light/80 dark:text-text-dark/80 text-lg leading-relaxed mb-6">
+            Our flavor takes inspiration from the ancient, aromatic art of crafting traditional Indian **Rose Sharbat**—the premium cool-down elixir served to royals. We've blended this authentic floral essence with **Amul's modern dairy perfection** to bring you a silky, chilled milk drink that revitalizes you instantly.
+          </p>
+
+          <!-- Cultural notes -->
+          <div class="p-6 md:p-8 bg-rose-50/30 dark:bg-rose-900/10 rounded-3xl border border-rose-100/40 dark:border-rose-900/15">
+            <h4 class="text-primary font-bold text-lg mb-3 flex items-center gap-2">
+              <span class="material-icons">spa</span>
+              Ayurveda &amp; Auspicious Rituals
+            </h4>
+            <p class="text-text-light/75 dark:text-text-dark/75 text-sm leading-relaxed">
+              In Ayurveda, roses are celebrated for their natural cooling properties, calming hot tempers, and pacifying *Sadhaka Pitta* (emotions centered around the heart). During Indian festivals, rose water and petals are symbols of love, auspiciousness, and unmatched hospitality.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Nutritional Highlights & USP -->
+        <div class="scroll-reveal lg:mt-8" data-animation="fade-right">
+          
+          <!-- USP Card -->
+          <div class="benefit-card mb-8 text-left border-l-4 border-l-primary bg-rose-50/20 dark:bg-rose-900/5">
+            <span class="material-icons text-primary text-3xl mb-2">stars</span>
+            <h3 class="text-xl font-bold font-display text-primary mb-2">Our Quality Commitment</h3>
+            <p class="text-text-light/85 dark:text-text-dark/85 text-sm font-semibold">
+              "Made with real rose extract, no compromise on taste."
+            </p>
+          </div>
+
+          <!-- Nutritional Card Grid -->
+          <!-- Nutritional Card Grid (Detailed Nutrition Facts) -->
+          <div class="benefit-card relative overflow-hidden bg-white/40 dark:bg-surface-dark/40 backdrop-blur-xl border border-rose-100 dark:border-rose-900/20 rounded-[2.5rem] p-6 shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-primary/30">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+            <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl pointer-events-none"></div>
+
+            <!-- Header -->
+            <div class="border-b-4 border-text-light dark:border-text-dark pb-2 mb-4">
+              <h3 class="font-display font-extrabold text-3xl tracking-tight text-text-light dark:text-text-dark">Nutrition Facts</h3>
+              <div class="flex justify-between text-xs text-text-light/60 dark:text-text-dark/60 font-semibold mt-1">
+                <span>Serving Size: 100ml</span>
+                <span>Liquid Gold Edition</span>
+              </div>
+            </div>
+
+            <!-- Rows -->
+            <div class="space-y-3 font-body text-xs text-text-light dark:text-text-dark max-h-[46vh] overflow-y-auto pr-1 select-none nutrition-scroll">
+              
+              <!-- Energy -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-bold text-sm">
+                  <span class="group-hover:text-primary transition-colors flex items-center gap-1.5">Energy</span>
+                  <span class="text-primary font-extrabold">90 kcal</span>
+                </div>
+                <span class="text-[10px] text-text-light/60 dark:text-text-dark/60 mt-0.5">Provides quick energy from sugars and milk solids.</span>
+              </div>
+
+              <!-- Energy from Fat -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group pl-4">
+                <div class="flex justify-between font-semibold">
+                  <span class="group-hover:text-primary transition-colors text-text-light/80 dark:text-text-dark/80">Energy from Fat</span>
+                  <span class="font-bold text-text-light/90 dark:text-text-dark/95">28 kcal</span>
+                </div>
+                <span class="text-[10px] text-text-light/50 dark:text-text-dark/50 mt-0.5">About 30% of total calories.</span>
+              </div>
+
+              <!-- Total Fat -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-bold">
+                  <span class="group-hover:text-primary transition-colors">Total Fat</span>
+                  <span class="font-extrabold">3.1 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/60 dark:text-text-dark/60 mt-0.5">Moderate; mainly milk fat.</span>
+              </div>
+
+              <!-- Saturated Fat -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group pl-4">
+                <div class="flex justify-between font-semibold">
+                  <span class="group-hover:text-primary transition-colors text-text-light/80 dark:text-text-dark/80">Saturated Fat</span>
+                  <span class="font-bold">1.9 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/50 dark:text-text-dark/50 mt-0.5">Typical of dairy products.</span>
+              </div>
+
+              <!-- Trans Fat -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group pl-4">
+                <div class="flex justify-between font-semibold">
+                  <span class="group-hover:text-primary transition-colors text-text-light/80 dark:text-text-dark/80">Trans Fat</span>
+                  <span class="font-bold">0 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/50 dark:text-text-dark/50 mt-0.5">Safe, no trans fats.</span>
+              </div>
+
+              <!-- Cholesterol -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-bold">
+                  <span class="group-hover:text-primary transition-colors">Cholesterol</span>
+                  <span class="font-extrabold">8–9 mg</span>
+                </div>
+                <span class="text-[10px] text-text-light/60 dark:text-text-dark/60 mt-0.5">Present due to milk solids.</span>
+              </div>
+
+              <!-- Carbohydrates -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-bold">
+                  <span class="group-hover:text-primary transition-colors">Total Carbohydrates</span>
+                  <span class="font-extrabold">12–12.5 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/60 dark:text-text-dark/60 mt-0.5">Entirely sugars.</span>
+              </div>
+
+              <!-- Total Sugars -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group pl-4">
+                <div class="flex justify-between font-semibold">
+                  <span class="group-hover:text-primary transition-colors text-text-light/80 dark:text-text-dark/80">Total Sugars</span>
+                  <span class="font-bold">12–12.5 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/50 dark:text-text-dark/50 mt-0.5">Includes natural lactose + added sugar.</span>
+              </div>
+
+              <!-- Added Sugars -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group pl-8">
+                <div class="flex justify-between font-semibold">
+                  <span class="group-hover:text-primary transition-colors text-text-light/70 dark:text-text-dark/70">Includes Added Sugars</span>
+                  <span class="font-bold text-text-light/80 dark:text-text-dark/85">7.7–8 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/40 dark:text-text-dark/40 mt-0.5">Significant portion of sweetness.</span>
+              </div>
+
+              <!-- Protein -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-bold">
+                  <span class="group-hover:text-primary transition-colors">Protein</span>
+                  <span class="font-extrabold">3.1–3.2 g</span>
+                </div>
+                <span class="text-[10px] text-text-light/60 dark:text-text-dark/60 mt-0.5">From milk; supports growth and repair.</span>
+              </div>
+
+              <!-- Sodium -->
+              <div class="flex flex-col border-b border-rose-100/50 dark:border-rose-900/10 pb-2 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-bold">
+                  <span class="group-hover:text-primary transition-colors">Sodium</span>
+                  <span class="font-extrabold">43–50 mg</span>
+                </div>
+                <span class="text-[10px] text-text-light/60 dark:text-text-dark/60 mt-0.5">Low to moderate.</span>
+              </div>
+
+              <!-- Dietary Fiber etc -->
+              <div class="flex flex-col pb-1 hover:bg-rose-500/5 p-2 rounded-xl transition-colors group">
+                <div class="flex justify-between font-semibold">
+                  <span class="group-hover:text-primary transition-colors text-text-light/80 dark:text-text-dark/80">Dietary Fiber, Vit C, Iron</span>
+                  <span class="font-bold text-text-light/60 dark:text-text-dark/60">Not significant</span>
+                </div>
+                <span class="text-[10px] text-text-light/50 dark:text-text-dark/50 mt-0.5">Minimal micronutrients.</span>
+              </div>
+
+            </div>
+
+            <!-- Footer note -->
+            <div class="border-t-2 border-text-light dark:border-text-dark pt-3 mt-4 text-[10px] text-text-light/50 dark:text-text-dark/50 text-center leading-normal">
+              *Percent Daily Values are based on a 2,000 calorie diet.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── BENEFITS SECTION ─── -->
+  <section class="py-24 bg-background-light dark:bg-background-dark transition-colors duration-300 relative z-20 overflow-hidden" id="benefits">
+
+    <!-- Parallax floating stars -->
+    <div class="parallax-bg" aria-hidden="true">
+      <span class="parallax-emoji" style="top:15%;left:88%;font-size:2rem;animation-delay:0.5s">⭐</span>
+      <span class="parallax-emoji" style="top:50%;left:3%;font-size:2.5rem;animation-delay:2s">💫</span>
+      <span class="parallax-emoji" style="top:85%;left:75%;font-size:1.8rem;animation-delay:4s">✨</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-reveal" data-animation="slide-up">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Why Choose Exotic Rose?</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="benefit-card scroll-reveal" data-animation="bounce-in" style="transition-delay:0ms">
+          <div class="benefit-icon bg-rose-50 dark:bg-rose-900/30 text-primary group-hover:bg-primary group-hover:text-white">
+            <span class="material-icons text-3xl">water_drop</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 font-display">Real Milk Goodness</h3>
+          <p class="text-text-light/70 dark:text-text-dark/70">Packed with the nutrition and creamy richness of real milk, providing wholesome energy with every gulp.</p>
+        </div>
+
+        <div class="benefit-card scroll-reveal md:-mt-8 md:mb-8" data-animation="bounce-in" style="transition-delay:120ms">
+          <div class="benefit-icon bg-amber-50 dark:bg-amber-900/30 text-secondary group-hover:bg-secondary group-hover:text-white">
+            <span class="material-icons text-3xl">ac_unit</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 font-display">Perfectly Chilled</h3>
+          <p class="text-text-light/70 dark:text-text-dark/70">Designed to be served ice-cold. It's the ultimate thirst quencher designed to beat the heat instantly.</p>
+        </div>
+
+        <div class="benefit-card scroll-reveal" data-animation="bounce-in" style="transition-delay:240ms">
+          <div class="benefit-icon bg-rose-50 dark:bg-rose-900/30 text-primary group-hover:bg-primary group-hover:text-white">
+            <span class="material-icons text-3xl">bolt</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 font-display">Refreshing Energy</h3>
+          <p class="text-text-light/70 dark:text-text-dark/70">A quick, delicious pick-me-up that revitalizes your senses and keeps you going throughout the day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Parallax hearts -->
+    <div class="parallax-bg" aria-hidden="true">
+      <span class="parallax-emoji" style="top:20%;left:10%;font-size:2rem;animation-delay:1s">🐰</span>
+      <span class="parallax-emoji" style="top:70%;left:85%;font-size:2.5rem;animation-delay:2.5s">🍭</span>
+      <span class="parallax-emoji" style="top:40%;left:50%;font-size:1.6rem;animation-delay:0s">🌸</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-reveal" data-animation="slide-up">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Our Story in Numbers</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
+        <p class="text-lg text-text-light/80 dark:text-text-dark/80 max-w-xl mx-auto">Decades of trust, millions of smiles, one iconic taste.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="counter-card scroll-reveal" data-animation="bounce-in" style="transition-delay:0ms">
+          <div class="counter-emoji">🌸</div>
+          <div class="counter-value" data-target="75" data-suffix="+">0</div>
+          <div class="counter-label">Years of Trust</div>
+        </div>
+        <div class="counter-card scroll-reveal" data-animation="bounce-in" style="transition-delay:100ms">
+          <div class="counter-emoji">🐰</div>
+          <div class="counter-value" data-target="500" data-suffix="M+">0</div>
+          <div class="counter-label">Happy Sips Daily</div>
+        </div>
+        <div class="counter-card scroll-reveal" data-animation="bounce-in" style="transition-delay:200ms">
+          <div class="counter-emoji">🍭</div>
+          <div class="counter-value" data-target="36" data-suffix="">0</div>
+          <div class="counter-label">Rose Variants</div>
+        </div>
+        <div class="counter-card scroll-reveal" data-animation="bounce-in" style="transition-delay:300ms">
+          <div class="counter-emoji">✨</div>
+          <div class="counter-value" data-target="100" data-suffix="% Pure">0</div>
+          <div class="counter-label">Natural Essence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- ─── INTERACTIVE FEATURES HUB ─── -->
+  <section class="py-24 bg-background-light dark:bg-background-dark transition-colors duration-300 relative z-20 overflow-hidden" id="interactives">
+    
+    <!-- Parallax background shapes -->
+    <div class="parallax-bg" aria-hidden="true">
+      <span class="parallax-emoji" style="top:25%;left:92%;font-size:2rem;animation-delay:1.5s">🍭</span>
+      <span class="parallax-emoji" style="top:75%;left:4%;font-size:2.5rem;animation-delay:0.5s">🌸</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-reveal" data-animation="slide-up">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Interactive Kool Hub</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+        <p class="text-lg text-text-light/80 dark:text-text-dark/80 max-w-2xl mx-auto">Explore other flavors, unlock yummy snack pairings, and test your Kool personality!</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <!-- Feature 1: Flavor Explorer -->
+        <div class="benefit-card h-full flex flex-col justify-between scroll-reveal" data-animation="bounce-in" style="transition-delay:0ms">
+          <div>
+            <h3 class="text-2xl font-bold font-display text-primary mb-4">Flavor Explorer 🧪</h3>
+            <p class="text-xs text-text-light/70 dark:text-text-dark/70 mb-6">Compare classic Amul Kool favorites and see why Rose reigns as the premium special choice.</p>
+            
+            <div class="space-y-3">
+              <!-- Badam -->
+              <button class="flavor-explorer-btn w-full text-left p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/10 hover:border-amber-300 transition-all flex justify-between items-center text-xs" data-flavor="Badam">
+                <span class="font-bold text-text-light/80 dark:text-text-dark/80">🌰 Amul Kool Badam</span>
+                <span class="text-[10px] text-amber-500 uppercase tracking-widest font-bold">Nutty Classic</span>
+              </button>
+              
+              <!-- Kesar -->
+              <button class="flavor-explorer-btn w-full text-left p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/10 hover:border-yellow-400 transition-all flex justify-between items-center text-xs" data-flavor="Kesar">
+                <span class="font-bold text-text-light/80 dark:text-text-dark/80">💛 Amul Kool Kesar</span>
+                <span class="text-[10px] text-yellow-500 uppercase tracking-widest font-bold">Royal Spice</span>
+              </button>
+              
+              <!-- Mango -->
+              <button class="flavor-explorer-btn w-full text-left p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/10 hover:border-orange-400 transition-all flex justify-between items-center text-xs" data-flavor="Mango">
+                <span class="font-bold text-text-light/80 dark:text-text-dark/80">🥭 Amul Kool Mango</span>
+                <span class="text-[10px] text-orange-500 uppercase tracking-widest font-bold">Summer Blast</span>
+              </button>
+
+              <!-- Rose (EXOTIC SPECIAL) -->
+              <button class="flavor-explorer-btn w-full text-left p-3.5 rounded-2xl bg-gradient-to-r from-rose-50 to-amber-50 dark:from-rose-950/20 dark:to-amber-950/20 border-2 border-primary/50 shadow-md shadow-primary/5 hover:border-primary transition-all flex justify-between items-center text-xs relative overflow-hidden" data-flavor="Rose">
+                <span class="font-extrabold text-primary flex items-center gap-1.5">
+                  🌸 Amul Kool Rose
+                </span>
+                <span class="text-[10px] bg-primary text-white font-bold py-1 px-2.5 rounded-full uppercase tracking-wider scale-90">Exotic Special</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Explorer result panel -->
+          <div class="mt-6 p-4 rounded-2xl bg-white/40 dark:bg-surface-dark/40 border border-rose-100 dark:border-rose-900/10 text-xs" id="flavor-detail-box">
+            <span class="font-bold text-primary block mb-1">Click a flavor to inspect details!</span>
+            <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed">Discover secret ingredients and what makes each bottle uniquely refreshing.</span>
+          </div>
+        </div>
+
+        <!-- Feature 2: Pairing Ideas -->
+        <div class="benefit-card h-full flex flex-col justify-between scroll-reveal" data-animation="bounce-in" style="transition-delay:120ms">
+          <div>
+            <h3 class="text-2xl font-bold font-display text-primary mb-4">Snack Pairings 🍽️</h3>
+            <p class="text-xs text-text-light/70 dark:text-text-dark/70 mb-6">Select a traditional street food below to unlock the perfect floral pairing secret!</p>
+            
+            <div class="grid grid-cols-3 gap-3 mb-6">
+              <!-- Samosa -->
+              <button class="pairing-btn p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/15 hover:border-primary text-center flex flex-col items-center justify-center gap-1.5 transition-all text-xs" data-snack="Samosa">
+                <span class="text-2xl">🥟</span>
+                <span class="font-bold text-text-light/80 dark:text-text-dark/80">Samosa</span>
+              </button>
+              
+              <!-- Biryani -->
+              <button class="pairing-btn p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/15 hover:border-primary text-center flex flex-col items-center justify-center gap-1.5 transition-all text-xs" data-snack="Biryani">
+                <span class="text-2xl">🍛</span>
+                <span class="font-bold text-text-light/80 dark:text-text-dark/80">Biryani</span>
+              </button>
+              
+              <!-- Jalebi -->
+              <button class="pairing-btn p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/15 hover:border-primary text-center flex flex-col items-center justify-center gap-1.5 transition-all text-xs" data-snack="Jalebi">
+                <span class="text-2xl">🥨</span>
+                <span class="font-bold text-text-light/80 dark:text-text-dark/80">Jalebi</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pairing result bubble -->
+          <div class="p-5 rounded-2xl bg-rose-50/50 dark:bg-rose-950/10 border border-primary/20 text-xs min-h-[14vh] flex items-center justify-center text-center leading-relaxed text-text-light dark:text-text-dark" id="pairing-display">
+            Tap a snack button above to discover the ultimate culinary matchup! 😋
+          </div>
+        </div>
+
+        <!-- Feature 3: Are You a Rose Kool Person Quiz -->
+        <div class="benefit-card h-full flex flex-col justify-between scroll-reveal" data-animation="bounce-in" style="transition-delay:240ms" id="quiz-container">
+          <div>
+            <h3 class="text-2xl font-bold font-display text-primary mb-2">Rose Kool Quiz 🧠</h3>
+            <p class="text-xs text-text-light/70 dark:text-text-dark/70 mb-6">Are you a Rose Kool person? Take this 3-question quick test to find out!</p>
+            
+            <!-- Quiz Slide Screen -->
+            <div id="quiz-slide" class="p-5 bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/10 rounded-2xl">
+              <!-- Question Slide 1 (Active by default) -->
+              <div class="quiz-step" data-step="1">
+                <div class="font-bold text-xs text-text-light/50 dark:text-text-dark/50 mb-1 uppercase tracking-wider">Question 1 of 3</div>
+                <h4 class="font-bold text-sm text-text-light dark:text-text-dark mb-4">What's your ultimate summer cool-down vibe?</h4>
+                <div class="space-y-2">
+                  <button class="quiz-option w-full text-left p-2.5 bg-rose-50/20 dark:bg-rose-900/5 hover:bg-rose-500/10 rounded-xl text-xs transition-colors" data-points="1">Chilling under an air conditioner</button>
+                  <button class="quiz-option w-full text-left p-2.5 bg-rose-50/20 dark:bg-rose-900/5 hover:bg-rose-500/10 rounded-xl text-xs transition-colors" data-points="3">Walking through a blooming rose garden</button>
+                </div>
+              </div>
+
+              <!-- Question Slide 2 (Hidden) -->
+              <div class="quiz-step hidden" data-step="2">
+                <div class="font-bold text-xs text-text-light/50 dark:text-text-dark/50 mb-1 uppercase tracking-wider">Question 2 of 3</div>
+                <h4 class="font-bold text-sm text-text-light dark:text-text-dark mb-4">How do you handle extremely spicy food?</h4>
+                <div class="space-y-2">
+                  <button class="quiz-option w-full text-left p-2.5 bg-rose-50/20 dark:bg-rose-900/5 hover:bg-rose-500/10 rounded-xl text-xs transition-colors" data-points="1">Just gulp down plain cold water</button>
+                  <button class="quiz-option w-full text-left p-2.5 bg-rose-50/20 dark:bg-rose-900/5 hover:bg-rose-500/10 rounded-xl text-xs transition-colors" data-points="3">Need a luxurious, cooling rose-milk shake</button>
+                </div>
+              </div>
+
+              <!-- Question Slide 3 (Hidden) -->
+              <div class="quiz-step hidden" data-step="3">
+                <div class="font-bold text-xs text-text-light/50 dark:text-text-dark/50 mb-1 uppercase tracking-wider">Question 3 of 3</div>
+                <h4 class="font-bold text-sm text-text-light dark:text-text-dark mb-4">Pick your dream summer travel destination:</h4>
+                <div class="space-y-2">
+                  <button class="quiz-option w-full text-left p-2.5 bg-rose-50/20 dark:bg-rose-900/5 hover:bg-rose-500/10 rounded-xl text-xs transition-colors" data-points="1">A deep, dark misty pine forest cabin</button>
+                  <button class="quiz-option w-full text-left p-2.5 bg-rose-50/20 dark:bg-rose-900/5 hover:bg-rose-500/10 rounded-xl text-xs transition-colors" data-points="3">A golden, royal palace courtyard in Jaipur</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quiz Editor Screen (Hidden by default) -->
+            <div id="quiz-editor" class="hidden p-5 bg-white dark:bg-surface-dark border border-rose-100 dark:border-rose-900/10 rounded-2xl flex flex-col justify-between mt-3">
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-wider text-secondary mb-3 flex items-center gap-1.5">
+                  <span class="material-icons text-sm">post_add</span> Add Custom Question
+                </h4>
+                <form id="quiz-editor-form" class="space-y-3">
+                  <input type="text" id="editor-q-text" placeholder="Question text..." required class="w-full p-2.5 rounded-xl border border-rose-200 dark:border-rose-900/40 text-xs bg-rose-50/10 dark:bg-rose-900/5 text-text-light dark:text-text-dark"/>
+                  <input type="text" id="editor-opt-a" placeholder="Option A text (Classic Kool)..." required class="w-full p-2.5 rounded-xl border border-rose-200 dark:border-rose-900/40 text-xs bg-rose-50/10 dark:bg-rose-900/5 text-text-light dark:text-text-dark"/>
+                  <input type="text" id="editor-opt-b" placeholder="Option B text (Rose Kool)..." required class="w-full p-2.5 rounded-xl border border-rose-200 dark:border-rose-900/40 text-xs bg-rose-50/10 dark:bg-rose-900/5 text-text-light dark:text-text-dark"/>
+                  <button type="submit" class="w-full py-2.5 bg-secondary text-white rounded-full text-xs font-bold transition-all shadow-md shadow-secondary/20 active:scale-95">
+                    Publish Question 🚀
+                  </button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-4 text-center flex flex-col gap-2">
+            <!-- Reset & Toggle buttons -->
+            <button id="btn-reset-quiz" class="hidden text-xs font-semibold text-primary underline hover:text-primary/80 transition-colors mx-auto">Start Over</button>
+            <button id="btn-toggle-quiz-editor" class="text-xs font-bold text-secondary flex items-center gap-1.5 mx-auto hover:text-secondary/80 transition-all active:scale-95">
+              <span class="material-icons text-sm">construction</span>
+              <span id="toggle-quiz-editor-text">Add Custom Question</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY – HORIZONTAL SCROLL FLIP CARDS ─── -->
+  <section class="py-24 bg-background-light dark:bg-background-dark transition-colors duration-300 overflow-hidden relative z-20" id="gallery">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-reveal" data-animation="slide-up">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Lifestyle Gallery</h2>
+        <div class="w-24 h-1 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-text-light/60 dark:text-text-dark/60 text-sm mt-2">See how our chilled Exotic Rose is enjoyed across college canteens, cricket matches, and outings</p>
+      </div>
+
+      <!-- Horizontal scroll gallery container with slide buttons -->
+      <div class="relative group/gallery">
+        
+        <!-- Left slide button -->
+        <button id="gallery-prev-btn" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 bg-white/90 dark:bg-surface-dark/90 hover:bg-primary hover:text-white border border-rose-100 dark:border-rose-900/30 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 active:scale-95 text-primary md:opacity-0 md:group-hover\/gallery:opacity-100 focus:opacity-100" aria-label="Previous slide">
+          <span class="material-icons text-2xl font-bold">chevron_left</span>
+        </button>
+
+        <!-- Gallery Track -->
+        <div class="gallery-scroll-track scroll-reveal" data-animation="fade-in" id="gallery-track">
+          <!-- Flip Card 1: College Canteens -->
+          <div class="flip-card-wrapper">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDweI7z90vaK00pRDc8j-tJFyAHYkOk2r98YZM1w-3-HJDRIKAsSw5G05sQUxJBiUcz9acpNye5-u3OeB_4CIbZHrx2smYLEzGwTeORIoQlKavF1GoNeNfZYscLhAtW9zKCmAcc9NiHKdIrN-OAgJlRnc7_uqjtVST3NgKuBr6VGR1db8AO5ucrtL6TTXT5ryFxdvpZuVRWE-qZWUCVJ_xXupX4YQAZ_szmk74XyjaoLWelkrDCKdTtKn8elojy1IKEDlQQrkk6zPwo" alt="College Canteen moments"/>
+                <div class="flip-front-label">College Canteens</div>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>College Canteens</strong></p>
+                <p>Grab a chilled bottle of Exotic Rose during lecture breaks for an instant brain cool-down!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 2: Cricket Matches -->
+          <div class="flip-card-wrapper">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDkIsm4z9rcKzHKxj3034U1StNu3Wk6yhc2NxWlCoYn4IZmI1ExR4PoVLt-mzAlxsYvLxq7zP_JaLeyxwqhKq_1gKMEoO6BIa5ZK27Y-E6lGmgrvzvDWY-pK71sx55d6Tui_EMH18skWNXVGrR7oC4E-RiV3uiM4THKUwBGXGnl9GkQB5PLfwIlgqZW8IH-bTKSD9SviXNxymYROL2xWWELoJ6HdsPxur5qbEggYB4Ty6V-zIug0E4_10f_v1P-_STd8HLANSrNZWN" alt="Cricket Match chiller"/>
+                <div class="flip-front-label">Cricket Matches</div>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Cricket Matches</strong></p>
+                <p>Beat the scoring heat on the pitch! Back your team with a refreshing floral cooling draft.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 3: Summer Outings -->
+          <div class="flip-card-wrapper">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcxSMLIq97EtT8_majBeZGmDoSTw8ezjdLz-NLD2kMEK7IiRwSD2RqHRwmRxay34XZWNwC5X-6BV7EB8X9Ywsf4BOC_wpLLUWVnczMla5iJLV0L3WwkjAiwnasl6JoT3u0uY4JdmrEmAr9VNG8QKWPPPzWzifB8HS5NmHiGO_nXE-rDpqToZsZdDEJUf5JHF40BhqcHUxkxbbf8qRp7cV7qn8dJtmGnpfCER_57d0Scv8aYq6kYTM7KJIaNRM_bHp-uvZd6ounTB8S" alt="Summer outings"/>
+                <div class="flip-front-label">Summer Outings</div>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Summer Outings</strong></p>
+                <p>The perfect, silky cooling shield for sunny weekend road trips and picnics with friends.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 4: Cool Moments -->
+          <div class="flip-card-wrapper">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDam5pN9ii4z8oFbT6lW-ut0y7gP3a6-PZn-0LUd6vdcHa2hpSLJLvun6cXO3XsDmPUJMUr24uWtOO9rzJO67qCpjTHn-pLV-GZee8Qd5HJqDWSn6k3QkOCeB-PSozw1l70gNmfubwie0glPvStNu7O5fTKfQCc6OVct1BaQaCTiOJCj26YMX6Q67a3_4sYTI9IrM5bc-aYOzZbXDqigHyF5hobpuRI44y3xEI4fO4Qb1U5kpWOEpp5n8mDAfBlfULuPebZrsX3ckXP" alt="Cool Moments community"/>
+                <div class="flip-front-label">Kool Moments</div>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Kool Moments</strong></p>
+                <p>Join the community! See and share amazing outing pics with chilled Amul Kool.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right slide button -->
+        <button id="gallery-next-btn" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 bg-white/90 dark:bg-surface-dark/90 hover:bg-primary hover:text-white border border-rose-100 dark:border-rose-900/30 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 active:scale-95 text-primary md:opacity-0 md:group-hover\/gallery:opacity-100 focus:opacity-100" aria-label="Next slide">
+          <span class="material-icons text-2xl font-bold">chevron_right</span>
+        </button>
+
+      </div><!-- /group/gallery -->
+
+      <!-- Cool Moments User Upload Panel -->
+      <div class="mt-16 max-w-xl mx-auto p-8 rounded-[2.5rem] border-2 border-dashed border-rose-200 dark:border-rose-900/30 bg-surface-light/40 dark:bg-surface-dark/40 text-center scroll-reveal" data-animation="slide-up">
+        <span class="material-icons text-primary text-4xl mb-4">add_a_photo</span>
+        <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-2">Share Your Kool Moment</h3>
+        <p class="text-xs text-text-light/60 dark:text-text-dark/60 mb-6">Drop your outing, canteen, or match day pic here and watch it appear instantly inside our lifestyle gallery!</p>
+        <label class="btn-hover-wiggle inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all shadow-md shadow-primary/20 cursor-pointer hover:scale-[1.02] active:scale-95">
+          <span class="material-icons text-sm">file_upload</span>
+          Upload a Pic
+          <input type="file" id="moment-uploader" accept="image/*" class="hidden"/>
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── BUY SECTION ─── -->
+  <section class="py-24 relative overflow-hidden hero-pattern z-20" id="buy">
+    <div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+
+    <!-- Floating hearts -->
+    <div class="parallax-bg" aria-hidden="true">
+      <span class="parallax-emoji" style="top:20%;left:5%;font-size:3rem;animation-delay:0s;color:rgba(255,255,255,0.4)">💖</span>
+      <span class="parallax-emoji" style="top:70%;left:93%;font-size:2rem;animation-delay:2s;color:rgba(255,255,255,0.35)">💝</span>
+      <span class="parallax-emoji" style="top:85%;left:45%;font-size:2.2rem;animation-delay:1s;color:rgba(255,255,255,0.3)">💕</span>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center scroll-reveal" data-animation="slide-up">
+      <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-6 drop-shadow-lg">Ready to Taste the Gold Standard? 🌟</h2>
+      <p class="text-xl text-rose-50 mb-10 drop-shadow-md">Find Amul Kool Exotic Rose at a store near you or order online for instant refreshment.</p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <button id="btn-order" class="btn-hover-wiggle bg-white text-primary hover:bg-rose-50 px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-xl flex items-center justify-center gap-2">
+          <span class="material-icons">shopping_cart</span>
+          Order Online 🛒
+        </button>
+        <button id="btn-store" class="btn-hover-wiggle-secondary bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center justify-center gap-2">
+          <span class="material-icons">location_on</span>
+          Find a Store 📍
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SIGN IN MODAL ─── -->
+  <div id="signin-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-md transition-all duration-300" aria-labelledby="signin-title" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-sm bg-surface-light dark:bg-surface-dark border border-rose-100 dark:border-rose-900/30 rounded-[2.5rem] shadow-2xl p-8 text-center transition-transform scale-95 duration-300" id="signin-card">
+      <button id="close-signin-btn" class="absolute top-4 right-4 p-2 rounded-full hover:bg-rose-100 dark:hover:bg-rose-900/40 text-primary transition-colors flex items-center justify-center" aria-label="Close login modal">
+        <span class="material-icons text-xl font-bold">close</span>
+      </button>
+
+      <span class="material-icons text-5xl text-primary mb-4 animate-bounce-slow">account_circle</span>
+      <h3 id="signin-title" class="text-2xl font-display font-bold text-primary mb-2">Welcome to Kool Club 🌸</h3>
+      <p class="text-xs text-text-light/70 dark:text-text-dark/70 mb-6">Sign in to save your match day outings, canteens, and share Cool Moments!</p>
+
+      <form id="signin-form" class="space-y-4">
+        <div>
+          <input type="text" id="signin-username" placeholder="Enter your name..." required class="w-full px-4 py-3 rounded-full border border-rose-200 dark:border-rose-900/40 bg-white/50 dark:bg-surface-dark focus:outline-none focus:border-primary text-sm text-center font-semibold text-text-light dark:text-text-dark"/>
+        </div>
+        <button type="submit" class="w-full py-3 bg-primary hover:bg-primary/95 text-white rounded-full font-semibold transition-all shadow-md shadow-primary/30 active:scale-95 text-sm">
+          Join Kool Club
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ─── PROFILE MODAL ─── -->
+  <div id="profile-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-md transition-all duration-300" aria-labelledby="profile-title" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-lg bg-surface-light dark:bg-surface-dark border border-rose-100 dark:border-rose-900/30 rounded-[2.5rem] shadow-2xl p-8 transition-transform scale-95 duration-300 flex flex-col justify-between overflow-hidden" id="profile-card">
+      <div class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+      <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-secondary/10 rounded-full blur-xl pointer-events-none"></div>
+
+      <!-- Close Button -->
+      <button id="close-profile-btn" class="absolute top-4 right-4 p-2 rounded-full hover:bg-rose-100 dark:hover:bg-rose-900/40 text-primary transition-colors flex items-center justify-center" aria-label="Close profile modal">
+        <span class="material-icons text-xl font-bold">close</span>
+      </button>
+
+      <!-- Avatar & Name -->
+      <div class="text-center mb-6">
+        <div class="relative w-20 h-20 mx-auto mb-3 bg-gradient-to-tr from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
+          <span class="material-icons text-4xl text-white">account_circle</span>
+          <div class="absolute bottom-0 right-0 w-6 h-6 bg-green-500 rounded-full border-2 border-white dark:border-surface-dark flex items-center justify-center" title="Logged In">
+            <span class="material-icons text-[12px] text-white font-bold">check</span>
+          </div>
+        </div>
+        <h3 id="profile-title" class="text-2xl font-display font-extrabold text-primary mb-1">Kool Club Member</h3>
+        <p id="profile-name-display" class="text-lg font-bold text-text-light dark:text-text-dark bg-rose-50/40 dark:bg-rose-950/20 px-4 py-1.5 rounded-full inline-block mt-1 border border-rose-100/20">Name</p>
+      </div>
+
+      <!-- Image Upload History -->
+      <div class="mb-6 flex-grow">
+        <h4 class="text-xs uppercase font-bold tracking-widest text-text-light/50 dark:text-text-dark/50 mb-3 flex items-center gap-1.5">
+          <span class="material-icons text-sm">photo_library</span> Uploaded Moments History
+        </h4>
+        
+        <!-- Grid for images -->
+        <div id="profile-history-grid" class="grid grid-cols-3 gap-2.5 max-h-[28vh] overflow-y-auto pr-1 nutrition-scroll min-h-[12vh] items-center justify-center text-center">
+          <!-- Dynamically populated or 'No moments' fallback -->
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="pt-4 border-t border-rose-100/40 dark:border-rose-900/15">
+        <button id="btn-profile-logout" class="w-full py-3.5 bg-gradient-to-r from-primary to-[#ff5c7c] hover:from-[#d63f5d] hover:to-primary text-white rounded-full font-bold transition-all shadow-md shadow-primary/25 active:scale-95 text-sm flex items-center justify-center gap-2">
+          <span class="material-icons text-sm">logout</span>
+          Sign Out &amp; Clear History
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STORE LOCATOR MODAL ─── -->
+  <div id="location-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-md transition-all duration-300" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-4xl bg-surface-light dark:bg-surface-dark border border-rose-100 dark:border-rose-900/30 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-[85vh] md:h-[70vh] transition-transform scale-95 duration-300" id="modal-card">
+      
+      <!-- Left column: Info & Actions -->
+      <div class="w-full md:w-5/12 p-6 md:p-8 flex flex-col justify-between overflow-y-auto border-b md:border-b-0 md:border-r border-rose-100 dark:border-rose-900/30 bg-rose-50/20 dark:bg-rose-900/5">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 id="modal-title" class="text-2xl md:text-3xl font-display font-bold text-primary">Store Locator 📍</h3>
+              <p class="text-sm text-text-light/70 dark:text-text-dark/70 mt-1">Find where to grab your cold Amul Kool Exotic Rose instantly!</p>
+            </div>
+            <button id="close-modal-btn" class="p-2 rounded-full hover:bg-rose-100 dark:hover:bg-rose-900/40 text-primary transition-colors md:hidden" aria-label="Close modal">
+              <span class="material-icons text-2xl">close</span>
+            </button>
+          </div>
+
+          <!-- Geolocation trigger -->
+          <button id="btn-detect-location" class="w-full mb-6 py-3 px-4 bg-primary hover:bg-primary/95 text-white rounded-full font-semibold transition-all shadow-md shadow-primary/30 flex items-center justify-center gap-2 text-sm hover:scale-[1.02] active:scale-95">
+            <span class="material-icons text-lg">my_location</span>
+            Use My Live Location
+          </button>
+
+          <div class="relative flex py-2 items-center mb-6">
+            <div class="flex-grow border-t border-rose-200 dark:border-rose-900/30"></div>
+            <span class="flex-shrink mx-4 text-text-light/50 dark:text-text-dark/50 text-xs uppercase font-bold tracking-wider">or search city</span>
+            <div class="flex-grow border-t border-rose-200 dark:border-rose-900/30"></div>
+          </div>
+
+          <!-- Text Search input -->
+          <form id="search-location-form" class="flex gap-2 mb-6">
+            <div class="relative flex-grow">
+              <input type="text" id="input-city-search" placeholder="Enter city or district..." class="w-full pl-10 pr-4 py-2.5 rounded-full border border-rose-200 dark:border-rose-900/40 bg-white/50 dark:bg-surface-dark focus:outline-none focus:border-primary text-sm transition-colors text-text-light dark:text-text-dark"/>
+              <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-text-light/50 dark:text-text-dark/50 text-lg">search</span>
+            </div>
+            <button type="submit" class="p-2.5 bg-secondary text-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+              <span class="material-icons">arrow_forward</span>
+            </button>
+          </form>
+
+          <!-- Hotspots select -->
+          <div>
+            <h4 class="text-xs uppercase font-bold tracking-wider text-text-light/50 dark:text-text-dark/50 mb-3">Popular Parlours</h4>
+            <div class="space-y-2 max-h-[22vh] overflow-y-auto pr-1" id="hotspot-list">
+              <button class="hotspot-btn w-full text-left p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100/60 dark:border-rose-900/20 hover:border-primary/50 dark:hover:border-primary/50 transition-all flex gap-3 items-center text-xs" data-query="Amul Parlour Anand Gujarat">
+                <span class="material-icons text-secondary text-sm">storefront</span>
+                <div>
+                  <div class="font-bold text-text-light dark:text-text-dark">Amul Dairy Road Parlour</div>
+                  <div class="text-text-light/60 dark:text-text-dark/60 mt-0.5">Anand, Gujarat (Amul HQ)</div>
+                </div>
+              </button>
+              <button class="hotspot-btn w-full text-left p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100/60 dark:border-rose-900/20 hover:border-primary/50 dark:hover:border-primary/50 transition-all flex gap-3 items-center text-xs" data-query="Amul Parlour Connaught Place Delhi">
+                <span class="material-icons text-secondary text-sm">storefront</span>
+                <div>
+                  <div class="font-bold text-text-light dark:text-text-dark">Amul Parlour CP</div>
+                  <div class="text-text-light/60 dark:text-text-dark/60 mt-0.5">Connaught Place, New Delhi</div>
+                </div>
+              </button>
+              <button class="hotspot-btn w-full text-left p-3 rounded-2xl bg-white dark:bg-surface-dark border border-rose-100/60 dark:border-rose-900/20 hover:border-primary/50 dark:hover:border-primary/50 transition-all flex gap-3 items-center text-xs" data-query="Amul Parlour Marine Drive Mumbai">
+                <span class="material-icons text-secondary text-sm">storefront</span>
+                <div>
+                  <div class="font-bold text-text-light dark:text-text-dark">Amul Parlour Marine Drive</div>
+                  <div class="text-text-light/60 dark:text-text-dark/60 mt-0.5">Marine Drive, Mumbai</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:block mt-6 pt-4 border-t border-rose-100 dark:border-rose-900/20 text-center text-[10px] text-text-light/50 dark:text-text-dark/50">
+          *Google Maps is used to calculate routing and locate active Amul counters nearby.
+        </div>
+      </div>
+
+      <!-- Right column: Interactive Google Maps Iframe -->
+      <div class="w-full md:w-7/12 relative bg-rose-100/30 flex-grow h-full flex flex-col">
+        <!-- Close button desktop -->
+        <button id="close-modal-desktop-btn" class="absolute top-4 right-4 z-10 p-2.5 bg-white dark:bg-surface-dark hover:bg-rose-50 hover:dark:bg-rose-900/30 text-primary transition-all rounded-full shadow-lg border border-rose-100/30 hidden md:flex items-center justify-center" aria-label="Close locator modal">
+          <span class="material-icons text-xl font-bold">close</span>
+        </button>
+
+        <!-- Dynamic Maps loader -->
+        <div id="map-loader-spinner" class="absolute inset-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm flex flex-col items-center justify-center z-10">
+          <div class="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          <p class="text-xs font-semibold text-primary mt-3">Loading fresh Kool spots... 🗺️</p>
+        </div>
+
+        <!-- The Google Maps Iframe -->
+        <iframe id="store-locator-map" class="w-full h-full border-none" loading="lazy" src="about:blank"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-surface-light dark:bg-surface-dark border-t border-rose-100 dark:border-rose-900/30 pt-16 pb-8 transition-colors duration-300 relative z-20 overflow-hidden">
+
+    <!-- Animated footer characters -->
+    <div class="footer-characters" aria-hidden="true">
+      <div class="footer-char char-left">
+        <span class="char-body">🌸</span>
+        <span class="char-wave">👋</span>
+      </div>
+      <div class="footer-char char-right">
+        <span class="char-body">🌹</span>
+        <span class="char-wave">👋</span>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12 scroll-reveal" data-animation="fade-in">
+        <div class="flex items-center gap-2">
+          <span class="font-display italic text-3xl font-bold text-primary">Amul</span>
+          <span class="font-display font-black text-2xl tracking-wider text-secondary uppercase">Kool</span>
+        </div>
+        <p class="text-text-light/60 dark:text-text-dark/60 italic font-display text-lg">"Made with Love &amp; Motion ✨"</p>
+        <div class="flex space-x-6">
+          <a class="social-icon" href="#" aria-label="Facebook">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+          </a>
+          <a class="social-icon" href="#" aria-label="Instagram">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+          </a>
+          <a class="social-icon" href="#" aria-label="Twitter">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center text-sm text-text-light/50 dark:text-text-dark/50 border-t border-rose-100 dark:border-rose-900/30 pt-8">
+        <p>© 2026 Amul Kool. All rights reserved. This is a conceptual design. Made with 💖 &amp; Motion.</p>
+        <p class="mt-2 text-xs tracking-widest uppercase font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text" style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          ✨ Created by Pratyush Raj ✨
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script type="module" src="./app.js"></script>
+  <script src="./animations.js"></script>
+  <script>
+    // Theme toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>

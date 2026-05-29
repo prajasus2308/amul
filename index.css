@@ -1,0 +1,631 @@
+/* Premium Animations and Interactive CSS Styles */
+/* Created by Pratyush Raj ✨ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #e84c6c;
+  --secondary: #d4af37;
+  --bg-gradient: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+  --text-muted: #5c424c;
+}
+
+/* ─── SCROLL PROGRESS BAR ─── */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+  z-index: 100;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 2px 10px rgba(232, 76, 108, 0.4);
+}
+
+/* ─── PRELOADER SCREEN ─── */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-gradient);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+
+.preloader-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.preloader-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+}
+
+.preloader-logo span {
+  color: var(--secondary);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.loader-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(232, 76, 108, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 0.1s ease-out;
+}
+
+.loader-percentage {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.loader-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ─── STICKY HEADER NAV LINK HIGHLIGHTS ─── */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1.2rem;
+  color: rgba(45, 27, 34, 0.7); /* dark text light theme */
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 9999px;
+}
+
+.dark .nav-link {
+  color: rgba(252, 236, 238, 0.7); /* dark mode light text */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(232, 76, 108, 0.08);
+  border-radius: 9999px;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.dark .nav-link::before {
+  background: rgba(232, 76, 108, 0.2);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::before, .nav-link:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ─── FLOATING PARTICLES SYSTEM ─── */
+#particles-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 15;
+  overflow: hidden;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(110vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.floating-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ─── PARALLAX DECORATIONS ─── */
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.parallax-emoji {
+  position: absolute;
+  display: inline-block;
+  opacity: 0.25;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+  animation: float-bubble 6s ease-in-out infinite;
+}
+
+/* ─── HERO TAGLINE PILL ─── */
+.hero-tagline-pill {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  animation: float-bubble 4s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(232, 76, 108, 0.15);
+}
+.dark .hero-tagline-pill {
+  background: rgba(42, 27, 31, 0.5);
+  border: 1px solid rgba(232, 76, 108, 0.25);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(232, 76, 108, 0.15); }
+  50% { box-shadow: 0 8px 32px rgba(232, 76, 108, 0.35); }
+}
+
+/* ─── CUSTOM BACKGROUND PATTERNS ─── */
+.hero-pattern {
+  background-color: #e84c6c;
+  background-image: radial-gradient(at 40% 20%, #f48fb1 0px, transparent 50%),
+  radial-gradient(at 80% 0%, #ff8a80 0px, transparent 50%),
+  radial-gradient(at 0% 50%, #f06292 0px, transparent 50%),
+  radial-gradient(at 80% 50%, #e91e63 0px, transparent 50%),
+  radial-gradient(at 0% 100%, #ec407a 0px, transparent 50%),
+  radial-gradient(at 80% 100%, #c2185b 0px, transparent 50%),
+  radial-gradient(at 0% 0%, #d81b60 0px, transparent 50%);
+}
+
+.dark .hero-pattern {
+  background-color: #4a1523;
+  background-image: radial-gradient(at 40% 20%, #880e4f 0px, transparent 50%),
+  radial-gradient(at 80% 0%, #ad1457 0px, transparent 50%),
+  radial-gradient(at 0% 50%, #c2185b 0px, transparent 50%),
+  radial-gradient(at 80% 50%, #d81b60 0px, transparent 50%),
+  radial-gradient(at 0% 100%, #e91e63 0px, transparent 50%),
+  radial-gradient(at 80% 100%, #f06292 0px, transparent 50%),
+  radial-gradient(at 0% 0%, #ec407a 0px, transparent 50%);
+}
+
+/* ─── BOUNCY & SMOOTH SCROLL REVEAL ENTRY ─── */
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fade animations configuration */
+.scroll-reveal[data-animation="slide-up"] {
+  transform: translateY(60px);
+}
+.scroll-reveal[data-animation="fade-in"] {
+  transform: scale(0.98);
+}
+.scroll-reveal[data-animation="fade-left"] {
+  transform: translateX(-60px);
+}
+.scroll-reveal[data-animation="fade-right"] {
+  transform: translateX(60px);
+}
+.scroll-reveal[data-animation="bounce-in"] {
+  transform: scale(0.7) translateY(40px);
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Triggered State */
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* ─── STATS & COUNTERS CARDS ─── */
+.counter-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(232, 76, 108, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .counter-card {
+  background: rgba(42, 27, 31, 0.45);
+  border: 1px solid rgba(232, 76, 108, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.counter-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(232, 76, 108, 0.12);
+  border-color: var(--primary);
+}
+.counter-emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: float-bubble 4s ease-in-out infinite;
+}
+.counter-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.counter-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.dark .counter-label {
+  color: rgba(252, 236, 238, 0.6);
+}
+
+/* ─── HORIZONTAL SCROLL GALLERY & FLIP CARDS ─── */
+.gallery-scroll-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 2.5rem 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.gallery-scroll-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.flip-card-wrapper {
+  flex: 0 0 280px;
+  height: 380px;
+  perspective: 1200px;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .flip-card-wrapper {
+    flex: 0 0 320px;
+    height: 420px;
+  }
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.flip-card-wrapper:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background: var(--surface-light);
+  z-index: 2;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.flip-card-wrapper:hover .flip-card-front img {
+  transform: scale(1.08);
+}
+
+.flip-front-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, var(--primary) 0%, #ff7390 100%);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  text-align: center;
+  z-index: 1;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+}
+
+.flip-card-back p {
+  margin-bottom: 1rem;
+}
+.flip-card-back strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ─── ELEGANT BENEFIT CARDS ─── */
+.benefit-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2.5rem;
+  padding: 3rem 2.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(232, 76, 108, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+.dark .benefit-card {
+  background: rgba(42, 27, 31, 0.4);
+  border: 1px solid rgba(232, 76, 108, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.benefit-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: var(--surface-light);
+  box-shadow: 0 25px 50px rgba(232, 76, 108, 0.15);
+  border-color: var(--primary);
+}
+.dark .benefit-card:hover {
+  background: var(--surface-dark);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+.benefit-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+}
+.benefit-card:hover .benefit-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* ─── FLOATING & PULSE ANIMATIONS ─── */
+@keyframes float-bubble {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float-slow {
+  animation: float-bubble 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-bubble 5s ease-in-out infinite;
+}
+
+/* ─── WIGGLE & GLOW HOVER EFFECTS ─── */
+@keyframes wiggle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.05) rotate(-2deg); }
+  75% { transform: scale(1.05) rotate(2deg); }
+}
+
+.btn-hover-wiggle {
+  transition: all 0.3s ease;
+}
+.btn-hover-wiggle:hover {
+  animation: wiggle 0.3s ease-in-out infinite;
+  box-shadow: 0 12px 30px rgba(232, 76, 108, 0.5);
+  transform: scale(1.05);
+}
+
+.btn-hover-wiggle-secondary {
+  transition: all 0.3s ease;
+}
+.btn-hover-wiggle-secondary:hover {
+  animation: wiggle 0.35s ease-in-out infinite;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+  background: white;
+  color: var(--primary) !important;
+  transform: scale(1.05);
+}
+
+/* ─── ANIMATED WAVING & BLINKING CHARACTERS ─── */
+.footer-characters {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.footer-char {
+  position: absolute;
+  bottom: -20px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.char-left {
+  left: 8%;
+}
+
+.char-right {
+  right: 8%;
+}
+
+.char-body {
+  display: inline-block;
+  animation: blink-eyes 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.char-wave {
+  display: inline-block;
+  animation: wave-hand 2s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  font-size: 1.8rem;
+}
+
+@keyframes blink-eyes {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes wave-hand {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(35deg); }
+}
+
+/* Hover triggers character peek */
+footer:hover .char-left {
+  transform: translateY(-20px);
+}
+footer:hover .char-right {
+  transform: translateY(-20px);
+}
+
+/* Social icons transition */
+.social-icon {
+  color: rgba(45, 27, 34, 0.6);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dark .social-icon {
+  color: rgba(252, 236, 238, 0.6);
+}
+.social-icon:hover {
+  color: var(--primary);
+  transform: translateY(-5px) scale(1.2);
+}
+
+/* ─── SMOOTH SCROLLING ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── DIRECT CARD INTERACTIVE ANIMATIONS ─── */
+
+/* 1. MORPH + SPIN on Benefit icons when card is hovered */
+.benefit-card:hover .benefit-icon {
+  border-radius: 50% 30% 50% 30% / 30% 50% 30% 50%;
+  transform: scale(1.1) rotate(15deg);
+}
+
+/* 2. BOUNCE on icon material-icons when benefit card is hovered */
+@keyframes cute-bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-4px); }
+}
+.benefit-card:hover .benefit-icon span {
+  animation: cute-bounce 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 3. ZOOM / SCALE + GLOW on Benefit Card hover is already styled beautifully */
+
+/* 4. ZOOM on Flip Card image on hover */
+.flip-card-wrapper:hover .flip-card-front img {
+  transform: scale(1.12);
+}
+
+/* Custom premium scrollbar for Nutrition Facts */
+.nutrition-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.nutrition-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nutrition-scroll::-webkit-scrollbar-thumb {
+  background: rgba(232, 76, 108, 0.25);
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+.nutrition-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(232, 76, 108, 0.5);
+}
+
+
+

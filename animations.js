@@ -18,50 +18,75 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateProgressBar, { passive: true });
   updateProgressBar();
 
-  // ─── 2. CUTE PLAYFUL WEB AUDIO SOUNDS ───
-  // Synthesizing retro/kawaii sound effects on the fly!
-  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  // ─── 2. REFINED AMBIENT ACOUSTIC INTERACTIONS ───
+  // Synthesizing luxurious, organic micro-acoustic feedback on the fly
+  let audioCtx = null;
+
+  function initAudioContext() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
 
   function playSound(type) {
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
+    try {
+      initAudioContext();
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      
+      const now = audioCtx.currentTime;
 
-    const now = audioCtx.currentTime;
+      if (type === 'hover') {
+        // Soft, organic micro-tick (luxurious haptic feel)
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(120, now);
+        osc.frequency.exponentialRampToValueAtTime(60, now + 0.04);
+        
+        gain.gain.setValueAtTime(0.012, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
+        
+        osc.start(now);
+        osc.stop(now + 0.04);
+      } else if (type === 'click') {
+        // Exquisite double-tone crystal chime (sounds like a high-end luxury interface)
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const gain1 = audioCtx.createGain();
+        const gain2 = audioCtx.createGain();
+        
+        osc1.connect(gain1);
+        osc2.connect(gain2);
+        gain1.connect(audioCtx.destination);
+        gain2.connect(audioCtx.destination);
 
-    if (type === 'hover') {
-      // Soft bubble pop / sparkle sound
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(800, now);
-      osc.frequency.exponentialRampToValueAtTime(1400, now + 0.1);
-      gain.gain.setValueAtTime(0.02, now);
-      gain.gain.linearRampToValueAtTime(0, now + 0.1);
-      osc.start(now);
-      osc.stop(now + 0.1);
-    } else if (type === 'click') {
-      // High-pitched happy ding
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(600, now);
-      osc.frequency.setValueAtTime(900, now + 0.05);
-      osc.frequency.exponentialRampToValueAtTime(1600, now + 0.2);
-      gain.gain.setValueAtTime(0.08, now);
-      gain.gain.linearRampToValueAtTime(0, now + 0.25);
-      osc.start(now);
-      osc.stop(now + 0.25);
-    } else if (type === 'scroll') {
-      // Very subtle airy whoosh (not too annoying, only triggers occasionally)
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(300, now);
-      osc.frequency.exponentialRampToValueAtTime(150, now + 0.3);
-      gain.gain.setValueAtTime(0.01, now);
-      gain.gain.linearRampToValueAtTime(0, now + 0.3);
-      osc.start(now);
-      osc.stop(now + 0.3);
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(659.25, now); // E5 (bright harmonic)
+        osc1.frequency.exponentialRampToValueAtTime(329.63, now + 0.4); // E4 slide down
+        
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(987.77, now); // B5 (perfect fifth overhead)
+        osc2.frequency.exponentialRampToValueAtTime(493.88, now + 0.4);
+
+        gain1.gain.setValueAtTime(0.02, now);
+        gain1.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
+
+        gain2.gain.setValueAtTime(0.01, now);
+        gain2.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+
+        osc1.start(now);
+        osc2.start(now);
+        osc1.stop(now + 0.5);
+        osc2.stop(now + 0.5);
+      }
+    } catch (e) {
+      console.warn("AudioContext interaction blocked or not supported:", e);
     }
   }
 
@@ -71,26 +96,38 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', () => playSound('click'));
   });
 
-  // ─── 3. FLOATING CLOUDS, STARS, AND HEARTS (DYNAMIC PARTICLES) ───
+  // ─── 3. ELEGANT FLOATING ROSE PETALS AND GOLD DUST (PARTICLES) ───
   const particlesLayer = document.getElementById('particles-layer');
-  const emojis = ['🌸', '✨', '💖', '🐰', '🍭', '⭐', '🎈'];
+  
+  // Custom SVG path vectors for elegant rose petals and shimmering gold dust
+  const petalSVGs = [
+    // Petal Type 1
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 15 C65 5, 85 20, 75 45 C65 70, 50 85, 50 85 C50 85, 35 70, 25 45 C15 20, 35 5, 50 15 Z" fill="#721c35" fill-opacity="0.2" stroke="#c5a059" stroke-opacity="0.25" stroke-width="1.5"/></svg>`,
+    // Petal Type 2
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 20 C70 5, 90 35, 70 60 C55 80, 50 85, 50 85 C50 85, 45 80, 30 60 C10 35, 30 5, 50 20 Z" fill="#8c2342" fill-opacity="0.15" stroke="#c5a059" stroke-opacity="0.15" stroke-width="1"/></svg>`,
+    // Gold Dust / Star Type
+    `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L58 42 L100 50 L58 58 L50 100 L42 58 L0 50 L42 42 Z" fill="#c5a059" fill-opacity="0.4"/></svg>`
+  ];
   
   function createParticle() {
     if (!particlesLayer) return;
     const particle = document.createElement('div');
     particle.className = 'floating-particle';
-    particle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    
+    // Choose random SVG
+    particle.innerHTML = petalSVGs[Math.floor(Math.random() * petalSVGs.length)];
     
     // Random sizes, positions and delays
-    const size = Math.random() * 1.5 + 1; // 1rem to 2.5rem
-    particle.style.fontSize = `${size}rem`;
+    const size = Math.random() * 20 + 15; // 15px to 35px
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
     particle.style.left = `${Math.random() * 100}vw`;
     
     // Bottom start position
     particle.style.bottom = `-50px`;
     
     // Duration
-    const duration = Math.random() * 12 + 8; // 8s to 20s
+    const duration = Math.random() * 15 + 10; // 10s to 25s
     particle.style.animationDuration = `${duration}s`;
     
     // Add to body
@@ -103,10 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Generate particles periodically
-  setInterval(createParticle, 1200);
+  setInterval(createParticle, 1800);
   // Spawn a few initial ones
-  for (let i = 0; i < 10; i++) {
-    setTimeout(createParticle, i * 300);
+  for (let i = 0; i < 6; i++) {
+    setTimeout(createParticle, i * 400);
   }
 
   // ─── 4. PARALLAX BACKDROP SCROLL EFFECTS ───
@@ -416,27 +453,27 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const flavorData = {
     Badam: `
-      <span class="font-bold text-amber-600 block mb-1">🌰 Amul Kool Badam</span>
-      <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed">
-        Wholesome almond crunch combined with cold dairy nutrition. A classic energizer preferred across college canteens during heavy study days!
+      <span class="font-bold text-amber-600 block mb-1">Amul Kool Royal Badam</span>
+      <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed font-light">
+        Wholesome almond crunch combined with cold dairy nutrition. A classic energizer preferred across college canteens during heavy study days.
       </span>
     `,
     Kesar: `
-      <span class="font-bold text-yellow-600 block mb-1">💛 Amul Kool Kesar</span>
-      <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed">
+      <span class="font-bold text-yellow-600 block mb-1">Amul Kool Golden Kesar</span>
+      <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed font-light">
         Infused with real royal saffron threads. Balanced traditional wellness meets dairy goodness in a beautifully chilled golden draft.
       </span>
     `,
     Mango: `
-      <span class="font-bold text-orange-600 block mb-1">🥭 Amul Kool Mango</span>
-      <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed">
-        Bursting with thick tropical Alphonso mango pulp. The ultimate summer picnic vacation thrill packed into every sweet cold sip!
+      <span class="font-bold text-orange-600 block mb-1">Amul Kool Tropical Mango</span>
+      <span class="text-text-light/75 dark:text-text-dark/75 leading-relaxed font-light">
+        Bursting with thick tropical Alphonso mango pulp. The ultimate summer picnic vacation thrill packed into every sweet cold sip.
       </span>
     `,
     Rose: `
-      <span class="font-bold text-primary block mb-1">🌸 Amul Kool Rose (Exotic Special)</span>
-      <span class="text-text-light/75 dark:text-text-dark/75 font-semibold leading-relaxed">
-        Crafted from premium hand-picked organic rose water distillations. Highly calming, naturally cooling, and exceptionally premium. The reigning special choice!
+      <span class="font-bold text-primary block mb-1">Amul Kool Exotic Rose (Reserve Special)</span>
+      <span class="text-text-light/75 dark:text-text-dark/75 font-semibold leading-relaxed font-light">
+        Crafted from premium hand-picked organic rose water distillations. Highly calming, naturally cooling, and exceptionally premium. The reigning special choice.
       </span>
     `
   };
@@ -464,16 +501,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const pairingData = {
     Samosa: `
-      <strong>🥟 Samosa + Exotic Rose</strong><br/><br/>
-      Spicy, flaky potato filling meets sweet floral dairy chill. The ultimate balance of hot Indian street spices and soothing milk cooling vibes! Perfect during cricket matches.
+      <strong class="text-primary font-semibold uppercase tracking-wider block mb-2">Samosa &amp; Exotic Rose</strong>
+      <span class="font-light">Spicy, flaky potato filling meets sweet floral dairy chill. The ultimate balance of hot Indian street spices and soothing milk cooling properties. Perfect during leisure moments.</span>
     `,
     Biryani: `
-      <strong>🍛 Biryani + Exotic Rose</strong><br/><br/>
-      A rich, heavily spiced Mughal feast paired with a refreshing floral breeze. Perfect to soothe your palate after a fiery, spicy spoonful of biryani!
+      <strong class="text-primary font-semibold uppercase tracking-wider block mb-2">Biryani &amp; Exotic Rose</strong>
+      <span class="font-light font-medium">A rich, heavily spiced Mughal feast paired with a refreshing floral breeze. Perfect to soothe your palate after a fiery, savory spoonful of biryani.</span>
     `,
     Jalebi: `
-      <strong>🥨 Jalebi + Exotic Rose</strong><br/><br/>
-      Double the royal sweetness! Hot crispy syrup loops combined with silky cold rose essence. A legendary cheat-day combo that will make you bounce!
+      <strong class="text-primary font-semibold uppercase tracking-wider block mb-2">Jalebi &amp; Exotic Rose</strong>
+      <span class="font-light">Double the royal sweetness. Hot crispy syrup loops combined with silky cold rose essence. A legendary dessert combo designed for celebration.</span>
     `
   };
 
@@ -595,17 +632,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const threshold = activeQuestions.length * 2;
 
     if (quizScore >= threshold) {
-      title = "🌹 100% Exotic Rose Kool! 🌹";
-      desc = "You appreciate the finer, royal things in life! You love luxurious heritage, traditional cooling vibes, and fine floral aesthetics. Keep being exotic!";
+      title = "100% Exotic Rose Palate";
+      desc = "You appreciate the finer, royal things in life. You love luxurious heritage, traditional cooling properties, and fine floral aesthetics. Keep being exotic.";
     } else {
-      title = "🥛 Classic Amul Kool Fan! 🥛";
-      desc = "You appreciate classic comfort, nutty badam, and rich golden kesar vibes. Wholesome, friendly, and always refreshing!";
+      title = "Classic Amul Kool Palate";
+      desc = "You appreciate classic comfort, nutty badam, and rich golden kesar tones. Wholesome, premium, and always refreshing.";
     }
 
     if (quizSlide) {
       quizSlide.innerHTML = `
         <div class="text-center py-6 px-4 scroll-reveal" data-animation="fade-in">
-          <div class="text-3xl mb-3 animate-bounce-slow">✨</div>
           <h4 class="font-bold text-base text-primary mb-2">${title}</h4>
           <p class="text-xs text-text-light/80 dark:text-text-dark/80 leading-relaxed">${desc}</p>
         </div>
@@ -658,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('customQuizQuestions', JSON.stringify(customQuestions));
         
         quizEditorForm.reset();
-        alert("Your custom question has been published successfully! 🚀");
+        alert("Your custom question has been published successfully.");
         
         quizEditor.classList.add('hidden');
         quizSlide.classList.remove('hidden');
@@ -848,7 +884,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('username', val);
         updateSigninUI();
         closeSigninModal();
-        alert(`Welcome to the Kool Club, ${val}! 🌸 You can now share and persist your moments.`);
+        alert(`Welcome to the Kool Club, ${val}! You can now share and persist your moments.`);
       }
     });
   }
@@ -874,13 +910,13 @@ document.addEventListener('DOMContentLoaded', () => {
     newCard.className = 'flip-card-wrapper transition-all duration-700 transform scale-100 translate-y-0';
     newCard.innerHTML = `
       <div class="flip-card">
-        <div class="flip-card-front border-2 border-primary">
+        <div class="flip-card-front border border-secondary/30">
           <img src="${imgUrl}" alt="Your Kool Moment pic ${indexNumber}"/>
-          <div class="flip-front-label bg-primary/80">Kool Moment #${indexNumber} 📸</div>
+          <div class="flip-front-label bg-primary/95 text-xs font-semibold uppercase tracking-widest">Moment #${indexNumber}</div>
         </div>
         <div class="flip-card-back bg-gradient-to-tr from-primary to-secondary">
-          <p><strong>Cool Outing!</strong></p>
-          <p>Thanks for sharing your Amul Kool Moment with the community! 🌸</p>
+          <p><strong>Reserve Outing</strong></p>
+          <p class="font-light text-xs mt-2">Thanks for sharing your Amul Kool Moment with the community!</p>
         </div>
       </div>
     `;

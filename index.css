@@ -1,6 +1,6 @@
 /* Premium Animations and Interactive CSS Styles */
 /* Created by Pratyush Raj ✨ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --primary: #e84c6c;
@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .preloader.fade-out {
@@ -56,7 +56,7 @@ body.no-scroll {
 }
 
 .preloader-logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 3.5rem;
   font-weight: 800;
   color: var(--primary);
@@ -66,7 +66,7 @@ body.no-scroll {
 
 .preloader-logo span {
   color: var(--secondary);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -300,7 +300,7 @@ body.no-scroll {
 .counter-value {
   font-size: 3.5rem;
   font-weight: 800;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   color: var(--primary);
   line-height: 1;
   margin-bottom: 0.5rem;

@@ -57,11 +57,17 @@ body.no-scroll {
 
 .preloader-logo {
   font-family: 'DM Sans', sans-serif;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--primary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -1px;
+}
+@media (min-width: 768px) {
+  .preloader-logo {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .preloader-logo span {
@@ -325,6 +331,7 @@ body.no-scroll {
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
+  -webkit-overflow-scrolling: touch; /* iOS Momentum Scrolling */
 }
 .gallery-scroll-track::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
@@ -393,7 +400,7 @@ body.no-scroll {
   padding: 1.5rem;
   background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
   color: white;
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   text-align: left;
@@ -417,7 +424,7 @@ body.no-scroll {
   margin-bottom: 1rem;
 }
 .flip-card-back strong {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.6rem;
   display: block;
   margin-bottom: 0.5rem;

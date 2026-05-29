@@ -148,13 +148,24 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-rose-100 dark:border-rose-900/30 px-4 pb-4">
-      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#experience">The Experience</a>
-      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#benefits">Benefits</a>
-      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#stats">Our Story</a>
-      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium" href="#gallery">Gallery</a>
-      <button id="btn-signin-mobile" class="block w-full mt-2 bg-rose-50 dark:bg-rose-900/20 text-primary py-2 rounded-full text-center font-medium text-sm">Sign In</button>
-      <a class="block mt-2 bg-primary text-white px-4 py-2 rounded-full text-center font-medium" href="#buy">Buy Now 🛒</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-rose-100 dark:border-rose-900/30 px-4 pb-4 select-none animate-fade-in">
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium text-sm transition-colors" href="#experience">The Experience</a>
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium text-sm transition-colors" href="#benefits">Benefits</a>
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium text-sm transition-colors" href="#stats">Our Story</a>
+      <a class="block py-2 text-text-light/80 dark:text-text-dark/80 hover:text-primary font-medium text-sm transition-colors" href="#gallery">Gallery</a>
+      <button id="btn-signin-mobile" class="block w-full mt-2 bg-rose-50 dark:bg-rose-900/20 text-primary py-2 rounded-full text-center font-medium text-sm flex items-center justify-center gap-1.5 active:scale-95 transition-transform"><span class="material-icons text-sm">login</span>Sign In</button>
+      <a class="block mt-2 bg-primary text-white px-4 py-2.5 rounded-full text-center font-medium text-sm active:scale-95 transition-transform" href="#buy">Buy Now 🛒</a>
+      
+      <!-- Mobile Sponsor & GitHub Link -->
+      <div class="mt-4 pt-3 border-t border-rose-100 dark:border-rose-900/15 flex items-center justify-between">
+        <a href="https://prajasus2308.qzz.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-rose-50/50 dark:bg-rose-900/10 text-primary px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wide border border-rose-100 dark:border-rose-900/20 shadow-sm active:scale-95 transition-transform">
+          <span class="material-icons text-[11px] text-secondary">verified</span>
+          Sponsor: Pratyush Raj
+        </a>
+        <a href="https://github.com/prajasus2308" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-full border border-rose-100 dark:border-rose-900/20 bg-rose-50/50 dark:bg-rose-900/10 text-primary hover:text-secondary shadow-sm flex items-center justify-center active:scale-95 transition-transform">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -174,7 +185,7 @@
       <!-- Hero Content -->
       <div id="hero-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center flex flex-col items-center justify-center transition-all duration-75">
         <div class="hero-tagline-pill">Made with Love &amp; Motion ✨</div>
-        <h1 class="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-4 drop-shadow-md text-text-light dark:text-text-dark hero-title">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-4 drop-shadow-md text-text-light dark:text-text-dark hero-title">
           Amul Kool<br/>Rose Milk
         </h1>
         <p class="text-xl md:text-2xl font-body font-semibold tracking-wider text-primary dark:text-secondary uppercase hero-subtitle">
